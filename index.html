@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Бесплатный Магазин</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f4f6f9; color: #1c1e21; padding: 20px; }
+        header { text-align: center; padding: 30px 10px; background: #fff; margin-bottom: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
+        header h1 { font-size: 26px; color: #333; margin-bottom: 5px; }
+        header p { color: #65676b; font-size: 14px; }
+        .catalog { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 1200px; margin: 0 auto; }
+        .product-card { background: #fff; width: 100%; max-width: 360px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s; }
+        .product-card:hover { transform: translateY(-3px); }
+        .product-img { width: 100%; height: 220px; background: #e4e6eb; display: flex; align-items: center; justify-content: center; color: #65676b; font-size: 14px; text-transform: uppercase; }
+        .content { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+        .badge { align-self: flex-start; background: #e7f3ff; color: #1877f2; padding: 4px 10px; border-radius: 10px; font-size: 11px; font-weight: bold; margin-bottom: 10px; text-transform: uppercase; }
+        h2 { font-size: 18px; margin-bottom: 8px; font-weight: 700; color: #222; min-height: 44px; }
+        .desc { font-size: 14px; color: #65676b; line-height: 1.4; margin-bottom: 15px; flex-grow: 1; }
+        .price-tag { font-size: 22px; font-weight: 800; color: #00a400; margin-bottom: 15px; }
+        .price-tag span { font-size: 14px; font-weight: normal; color: #65676b; margin-left: 3px; }
+        .buy-btn { background: #24a1de; color: #fff; border: none; padding: 12px; border-radius: 10px; font-size: 15px; font-weight: bold; cursor: pointer; text-align: center; text-decoration: none; transition: background 0.2s; }
+        .buy-btn:hover { background: #1d82b2; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🛒 Название вашего магазина</h1>
+    <p>Быстрая доставка по всей Украине • Оплата при получении</p>
+</header>
+
+<div class="catalog">
+
+    <!-- ТОВАР 1: ECOFLOW -->
+    <div class="product-card">
+        <div class="product-img">📷 Фото EcoFlow</div>
+        <div class="content">
+            <span class="badge">В наличии</span>
+            <h2>EcoFlow River 2 Max (EcoPhone)</h2>
+            <p class="desc">Надежный источник энергии емкостью 512 Вт·ч. Питание бытовой техники, ноутбуков и роутеров. Зарядка от 0% до 100% за 60 минут. Премиальный аккумулятор LiFePO4 (3000+ циклов, 10+ лет работы). Управление со смартфона.</p>
+            <div class="price-tag">25 500<span>грн.</span></div>
+            <a href="#" class="buy-btn" onclick="orderProduct('EcoFlow River 2 Max')">Купить в Telegram</a>
+        </div>
+    </div>
+
+    <!-- ТОВАР 2: ЧАСЫ -->
+    <div class="product-card">
+        <div class="product-img">📷 Фото Смарт-часов</div>
+        <div class="content">
+            <span class="badge">Хит продаж</span>
+            <h2>Смарт-часы COANR Military</h2>
+            <p class="desc">Мощные тактические часы с аккумулятором 1400 мАч (до 30 дней работы). Встроенный яркий LED-фонарик для блэкаутов. Экран 1.7" AMOLED HD. Беспроводные звонки, компас, влагозащита IP68. 2 ремешка в комплекте (сталь + силикон).</p>
+            <div class="price-tag">2 000<span>грн.</span></div>
+            <a href="#" class="buy-btn" onclick="orderProduct('Смарт-часы COANR Military')">Купить в Telegram</a>
+        </div>
+    </div>
+
+    <!-- ТОВАР 3: КАМЕРА -->
+    <div class="product-card">
+        <div class="product-img">📷 Фото Камеры</div>
+        <div class="content">
+            <span class="badge">В наличии</span>
+            <h2>Камера заднего вида Hyundai Elantra (2017+)</h2>
+            <p class="desc">Штатная камера высокого разрешения. Устанавливается в родное место без повреждения проводки автомобиля. Широкий угол обзора, четкая картинка днем и ночью, активные парковочные линии разметки. Защита IP68.</p>
+            <div class="price-tag">2 000<span>грн.</span></div>
+            <a href="#" class="buy-btn" onclick="orderProduct('Камеру для Hyundai Elantra')">Купить в Telegram</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function orderProduct(productName) {
+    const telegramUsername = 'PRO_growth5'; 
+    const message = `Здравствуйте! Я хочу заказать товар: ${productName}. Подскажите, пожалуйста, наличие и условия доставки.`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://t.me{telegramUsername}?text=${encodedMessage}`, '_blank');
+}
+</script>
+
+</body>
+</html>
